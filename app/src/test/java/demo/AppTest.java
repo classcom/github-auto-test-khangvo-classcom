@@ -3,13 +3,21 @@
  */
 package demo;
 
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
+    App classUnderTest;
+    @Before
+    public void setup() {
+        classUnderTest = new App();
+    }
     @Test public void appHasAGreeting() {
-        App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-        assertEquals("Hello World", classUnderTest.getGreeting());
+    }
+    @Test public void appHasAHello() {
+        assertEquals("Hello World!", classUnderTest.getGreeting());
     }
 }
