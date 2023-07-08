@@ -2,6 +2,7 @@ package demo;
 
 import javax.swing.*;
 import java.awt.*;
+import ch.aplu.jgamegrid.*;
 
 public class UIDriver {
     public static void main(String[] args) {

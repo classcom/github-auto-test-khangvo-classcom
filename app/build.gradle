@@ -8,7 +8,7 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    id 'application'
 }
 
 repositories {
@@ -16,23 +16,23 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     // Use JUnit test framework.
-    testImplementation("junit:junit:4.13.2")
+    testImplementation 'junit:junit:4.13.2'
+    implementation fileTree(dir: "lib", include: "*.jar")
 
     // This dependency is used by the application.
-    implementation("com.google.guava:guava:31.1-jre")
+    implementation 'com.google.guava:guava:31.1-jre'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(18))
+        languageVersion = JavaLanguageVersion.of(18)
     }
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("demo.App")
+    mainClass = 'demo_groovy.UIDriver'
 }
