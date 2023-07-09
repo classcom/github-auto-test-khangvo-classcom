@@ -4,6 +4,8 @@ package pacman.monsters;
 
 import ch.aplu.jgamegrid.*;
 import pacman.GameController;
+import pacman.models.MonsterState;
+import pacman.models.MonsterType;
 
 import java.awt.Color;
 import java.util.*;

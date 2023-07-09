@@ -1,4 +1,4 @@
-package pacman.monsters;
+package pacman.models;
 
 
 public enum MonsterState {

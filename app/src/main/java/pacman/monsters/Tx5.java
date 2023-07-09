@@ -2,8 +2,7 @@ package pacman.monsters;
 
 import ch.aplu.jgamegrid.Location;
 import pacman.GameController;
-import pacman.monsters.Monster;
-import pacman.monsters.MonsterType;
+import pacman.models.MonsterType;
 
 public class Tx5 extends Monster {
     public Tx5(GameController gameController) {

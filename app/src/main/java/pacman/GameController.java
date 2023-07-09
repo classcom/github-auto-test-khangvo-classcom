@@ -3,7 +3,7 @@ package pacman;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.Location;
 import pacman.monsters.Monster;
-import pacman.monsters.MonsterCreator;
+import pacman.models.MonsterCreator;
 import pacman.monsters.Tx5;
 import pacman.utility.GameCallback;
 

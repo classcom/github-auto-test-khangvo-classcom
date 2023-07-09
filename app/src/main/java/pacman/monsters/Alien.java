@@ -2,6 +2,7 @@ package pacman.monsters;
 
 import ch.aplu.jgamegrid.Location;
 import pacman.GameController;
+import pacman.models.MonsterType;
 
 import java.util.ArrayList;
 

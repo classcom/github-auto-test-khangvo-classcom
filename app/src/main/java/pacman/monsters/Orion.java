@@ -3,6 +3,7 @@ package pacman.monsters;
 import ch.aplu.jgamegrid.Actor;
 import ch.aplu.jgamegrid.Location;
 import pacman.GameController;
+import pacman.models.MonsterType;
 
 import java.util.ArrayList;
 import java.util.List;

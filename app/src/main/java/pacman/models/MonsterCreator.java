@@ -1,8 +1,9 @@
-package pacman.monsters;
+package pacman.models;
 
 import ch.aplu.jgamegrid.Location;
 import pacman.ActorLocation;
 import pacman.GameController;
+import pacman.monsters.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
