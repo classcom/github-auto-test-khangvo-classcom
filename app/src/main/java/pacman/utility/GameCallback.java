@@ -11,25 +11,15 @@ import java.io.IOException;
  * Please do not change this class. This class is used for testing and your code needs to print the correct output to pass the test
  */
 public class GameCallback {
-    private String logFilePath = "Log.txt";
-    private FileWriter fileWriter = null;
+    StringBuilder logResult;
 
     public GameCallback() {
-        try {
-            fileWriter = new FileWriter(new File(logFilePath));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        logResult = new StringBuilder();
     }
 
     public void writeString(String str) {
-        try {
-            fileWriter.write(str);
-            fileWriter.write("\n");
-            fileWriter.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        logResult.append(str);
+        logResult.append("\n");
     }
 
     public void endOfGame(String gameResult) {
@@ -52,5 +42,9 @@ public class GameCallback {
         String pillOrItemLocationString = String.format("[PacMan] Location: %d-%d. Eat Pill/Item: %s", pacmanLocation.getY(),
                 pacmanLocation.getY(), type);
         writeString(pillOrItemLocationString);
+    }
+
+    public String getResultLog() {
+        return logResult.toString();
     }
 }

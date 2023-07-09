@@ -5,6 +5,11 @@ package demo;
 
 import org.junit.Before;
 import org.junit.Test;
+import pacman.Game;
+import pacman.utility.GameCallback;
+import pacman.utility.PropertiesLoader;
+
+import java.util.Properties;
 
 import static org.junit.Assert.*;
 
@@ -14,10 +19,14 @@ public class AppTest {
     public void setup() {
         classUnderTest = new App();
     }
-    @Test public void appHasAGreeting() {
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
-    @Test public void appHasAHello() {
-        assertEquals("Hello World!", classUnderTest.getGreeting());
+    @Test
+    public void testPacManWin() {
+        String propertiesPath = "properties/test2.properties";
+        final Properties properties = PropertiesLoader.loadPropertiesFile(propertiesPath);
+        GameCallback gameCallback = new GameCallback();
+        Game game = new Game(gameCallback, properties);
+        String logResult = game.runGame(false);
+        assertTrue(logResult.contains("Score: 16. Pills: 8"));
+        assertTrue(logResult.contains("YOU WIN"));
     }
 }

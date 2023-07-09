@@ -25,7 +25,13 @@ public class Game extends GameGrid
     gameController = new GameController(nbHorzCells, nbVertCells, properties, gameCallback);
     setSimulationPeriod(100);
     setTitle("[PacMan in the Multiverse]");
+  }
 
+  public GameCallback getGameCallback() {
+    return gameCallback;
+  }
+
+  public String runGame(boolean willShow) {
     GGBackground bg = getBg();
     drawGrid(bg);
 
@@ -35,7 +41,10 @@ public class Game extends GameGrid
 
     //Run the game
     doRun();
-    show();
+    if (willShow) {
+      show();
+    }
+
     gameController.setupPillAndItemsLocations();
 
     do {
@@ -60,14 +69,9 @@ public class Game extends GameGrid
     }
     setTitle(title);
     gameCallback.endOfGame(title);
-
     doPause();
+    return gameCallback.getResultLog();
   }
-
-  public GameCallback getGameCallback() {
-    return gameCallback;
-  }
-
 
   private void setupActorLocations() {
     List<ActorLocation> actorLocations = gameController.getActorLocations();
