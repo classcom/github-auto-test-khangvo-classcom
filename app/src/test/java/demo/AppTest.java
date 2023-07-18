@@ -20,7 +20,7 @@ public class AppTest {
         classUnderTest = new App();
     }
     @Test
-    public void testPacManWin() {
+    public void testPacManWinSuccess() {
         String propertiesPath = "properties/test2.properties";
         final Properties properties = PropertiesLoader.loadPropertiesFile(propertiesPath);
         GameCallback gameCallback = new GameCallback();
@@ -28,5 +28,16 @@ public class AppTest {
         String logResult = game.runGame(false);
         assertTrue(logResult.contains("Score: 16. Pills: 8"));
         assertTrue(logResult.contains("YOU WIN"));
+    }
+
+    @Test
+    public void testPacManWinFailed() {
+        String propertiesPath = "properties/test2.properties";
+        final Properties properties = PropertiesLoader.loadPropertiesFile(propertiesPath);
+        GameCallback gameCallback = new GameCallback();
+        Game game = new Game(gameCallback, properties);
+        String logResult = game.runGame(false);
+        assertFalse(logResult.contains("Score: 17. Pills: 8"));
+        assertFalse(logResult.contains("YOU LOSE"));
     }
 }
