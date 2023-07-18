@@ -37,7 +37,7 @@ public class AppTest {
         GameCallback gameCallback = new GameCallback();
         Game game = new Game(gameCallback, properties);
         String logResult = game.runGame(false);
-        assertFalse(logResult.contains("Score: 17. Pills: 8"));
-        assertFalse(logResult.contains("YOU LOSE"));
+        assertTrue(logResult.contains("Score: 17. Pills: 8"));
+        assertTrue(logResult.contains("YOU LOSE"));
     }
 }
