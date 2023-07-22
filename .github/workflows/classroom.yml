@@ -10,7 +10,7 @@ permissions:
 jobs:
   build:
     name: Autograding
-    runs-on: [self-hosted, swen30006, autotest]
+    runs-on: [self-hosted]
     steps:
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
